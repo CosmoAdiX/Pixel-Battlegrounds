@@ -13,4 +13,4 @@
 
 ![Rust](https://img.shields.io/badge/Godot-gray?style=for-the-badge&logo=godotengine&logoColor=light_blue)
 
-> - ### I would suggest you to also check out my other [projects](https://github.com/CosmoAdiX?tab=repositories) that I am working on that will probably make you feel romantic as well as excited.
+> - ### I would suggest you to also check out my other [projects](https://github.com/CosmoAdiX?tab=repositories) that I am working on that will probably make you feel romantic as well as excited. 

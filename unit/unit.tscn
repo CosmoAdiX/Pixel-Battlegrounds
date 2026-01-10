@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1bjgb6fvr6l8"]
+
+[ext_resource type="Texture2D" uid="uid://cx1ivjobggp8n" path="res://assets/sprites/rogues.png" id="1_hy15m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy15m"]
+size = Vector2(30, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hy15m"]
+bg_color = Color(0.23137255, 0.11372549, 0.09803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3k25b"]
+bg_color = Color(0, 0.73333335, 0.3137255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.23137255, 0.11372549, 0.09803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hs7ws"]
+bg_color = Color(0.23137255, 0.11372549, 0.09803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_japly"]
+bg_color = Color(0, 0.47843137, 0.9372549, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.23137255, 0.11372549, 0.09803922, 1)
+
+[node name="Unit" type="Area2D"]
+
+[node name="Skin" type="Sprite2D" parent="."]
+position = Vector2(16, 8)
+texture = ExtResource("1_hy15m")
+region_enabled = true
+region_rect = Rect2(32, 96, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17, 8)
+shape = SubResource("RectangleShape2D_hy15m")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 1.0
+offset_top = -19.0
+offset_right = 31.0
+offset_bottom = -13.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hy15m")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3k25b")
+value = 45.0
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+offset_left = 1.0
+offset_top = -14.0
+offset_right = 31.0
+offset_bottom = -10.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hs7ws")
+theme_override_styles/fill = SubResource("StyleBoxFlat_japly")
+value = 70.0
+show_percentage = false
