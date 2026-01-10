@@ -1,6 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1bjgb6fvr6l8"]
+[gd_scene load_steps=10 format=3 uid="uid://d1bjgb6fvr6l8"]
 
-[ext_resource type="Texture2D" uid="uid://cx1ivjobggp8n" path="res://assets/sprites/rogues.png" id="1_hy15m"]
+[ext_resource type="Script" uid="uid://dwj13qadi1vcv" path="res://scene/unit/unit.gd" id="1_qt1e6"]
+[ext_resource type="Resource" uid="uid://cdlxtlwi67581" path="res://data/units/bjorn.tres" id="2_3j4cu"]
+[ext_resource type="Texture2D" uid="uid://cx1ivjobggp8n" path="res://assets/sprites/rogues.png" id="3_rkgpu"]
+[ext_resource type="Script" uid="uid://cajr1dx3mn2ev" path="res://components/drag_and_drop.gd" id="4_3j4cu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hy15m"]
 size = Vector2(30, 32)
@@ -28,18 +31,20 @@ border_width_bottom = 1
 border_color = Color(0.23137255, 0.11372549, 0.09803922, 1)
 
 [node name="Unit" type="Area2D"]
+script = ExtResource("1_qt1e6")
+stats = ExtResource("2_3j4cu")
 
 [node name="Skin" type="Sprite2D" parent="."]
 position = Vector2(16, 8)
-texture = ExtResource("1_hy15m")
+texture = ExtResource("3_rkgpu")
 region_enabled = true
-region_rect = Rect2(32, 96, 32, 32)
+region_rect = Rect2(96, 128, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(17, 8)
 shape = SubResource("RectangleShape2D_hy15m")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = 1.0
 offset_top = -19.0
 offset_right = 31.0
@@ -49,7 +54,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_3k25b")
 value = 45.0
 show_percentage = false
 
-[node name="ProgressBar2" type="ProgressBar" parent="."]
+[node name="ManaBar" type="ProgressBar" parent="."]
 offset_left = 1.0
 offset_top = -14.0
 offset_right = 31.0
@@ -58,3 +63,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_hs7ws")
 theme_override_styles/fill = SubResource("StyleBoxFlat_japly")
 value = 70.0
 show_percentage = false
+
+[node name="DragAndDrop" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("4_3j4cu")
+target = NodePath("..")

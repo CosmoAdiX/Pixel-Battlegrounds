@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://cge0fphvgk78k" path="res://scene/arena/tileset.tres" id="1_cvkn8"]
 [ext_resource type="Script" uid="uid://daqfj57oyr441" path="res://scene/arena.gd" id="1_nye2f"]
 [ext_resource type="Texture2D" uid="uid://mbxv0ayrsu3d" path="res://assets/sprites/star_particle.png" id="2_5ovl6"]
-[ext_resource type="PackedScene" uid="uid://d1bjgb6fvr6l8" path="res://unit/unit.tscn" id="4_jw0wr"]
+[ext_resource type="PackedScene" uid="uid://d1bjgb6fvr6l8" path="res://scene/unit/unit.tscn" id="4_jw0wr"]
 
 [sub_resource type="Curve" id="Curve_nye2f"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.259587, 1), -0.6259142, -1.4225739, 0, 0, Vector2(0.73156345, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -80,10 +80,5 @@ metadata/_edit_group_ = true
 [node name="Highligth" type="TileMapLayer" parent="WorkingBench"]
 tile_set = ExtResource("1_cvkn8")
 
-[node name="Unit" parent="." instance=ExtResource("4_jw0wr")]
-position = Vector2(160, 320)
-
-[node name="Sprite2D" parent="Unit" index="0"]
-position = Vector2(16, 8)
-
-[editable path="Unit"]
+[node name="Unit" parent="WorkingBench" instance=ExtResource("4_jw0wr")]
+position = Vector2(32, 0)
